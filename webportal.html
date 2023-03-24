@@ -1,0 +1,207 @@
+<!DOCTYPE html>
+<html>
+<head>
+	<meta charset="utf-8">
+	<meta name="viewport" content="width=device-width, initial-scale=1">
+	<title>Geoportal</title>
+	<link rel="stylesheet" href="main.css">
+	<link href='https://fonts.googleapis.com/css?family=Fraunces' rel='stylesheet'>
+	<link rel="stylesheet" href="https://unpkg.com/leaflet@1.9.3/dist/leaflet.css"
+     integrity="sha256-kLaT2GOSpHechhsozzB+flnD+zUyjE2LlfWPgU04xyI="
+     crossorigin=""/>
+    <script src="https://unpkg.com/leaflet@1.9.3/dist/leaflet.js"
+     integrity="sha256-WBkoXOwTeyKclOHuWtc+i2uENFpDZ9YPdf5Hf+D7ewM="
+     crossorigin=""></script>
+</head>
+<body>
+	<header class="header">
+		<h1>YourOrg Geospatial Information System</h1>
+	</header>
+	<nav class="navigation-bar">
+		<a href="welcome.html">Welcome</a>
+		<a href="projects.html">Projects</a>
+		<a href="webportal.html">Geoportal</a>
+		<a href="about.html">About</a>
+		<a href="testimonials.html">Testimonials</a>
+	</nav>
+	<div id="map"></div>
+	<script>
+    	// create a Leaflet map centered at Kiambu county
+    	var map = L.map('map').setView([-1.1647, 36.8356], 10.4);
+    
+    	// add a base layer from OpenStreetMap
+    	L.tileLayer('https://{s}.tile.openstreetmap.org/{z}/{x}/{y}.png', {
+      	attribution: 'Map data &copy; <a href="https://www.openstreetmap.org/">OpenStreetMap</a> contributors',
+      	maxZoom: 18,
+    	}).addTo(map);
+
+    	// define various markers
+    	var pryIcon = L.icon ({
+    		iconUrl: 'Images/pry_school.png',
+    		iconSize: [25, 30], // size of the icon
+    		iconAnchor: [10, 20], // point of the icon which will correspond to marker's location
+    	});
+
+    	var secIcon = L.icon ({
+    		iconUrl: 'Images/sec_school.png',
+    		iconSize: [25, 30],
+    		iconAnchor: [10, 20],
+    	});
+
+    	var uniIcon = L.icon ({
+    		iconUrl: 'Images/uni_school.png',
+    		iconSize: [25, 30],
+    		iconAnchor: [10, 20],
+    	});
+
+    	var pubIcon = L.icon ({
+    		iconUrl: 'Images/pub_hosp.jpeg',
+    		iconSize: [25, 30],
+    		iconAnchor: [10, 20],
+    	});
+
+    	var privIcon = L.icon ({
+    		iconUrl: 'Images/priv_hosp.jpeg',
+    		iconSize: [25, 30],
+    		iconAnchor: [10, 20],
+    	});
+
+    	var adminIcon = L.icon ({
+    		iconUrl: 'Images/police.jpeg',
+    		iconSize: [25, 30],
+    		iconAnchor: [10, 20],
+    	});
+
+    	var hotelIcon = L.icon ({
+    		iconUrl: 'Images/hotels.jpeg',
+    		iconSize: [25, 30],
+    		iconAnchor: [10, 20],
+    	});
+
+    	var mallIcon = L.icon ({
+    		iconUrl: 'Images/malls.jpeg',
+    		iconSize: [25, 30],
+    		iconAnchor: [10, 20],
+    	});
+
+    	// primary schools
+    	// Ahadi
+    	var ahadi = L.marker([-1.127322, 37.006483], {icon: pryIcon}).addTo(map);
+    	// Lily
+    	var lily = L.marker([-1.208987, 36.950850], {icon: pryIcon}).addTo(map);
+    	// Kiambu
+    	var kiambu = L.marker([-1.170031, 36.829696], {icon: pryIcon}).addTo(map);
+    	// St. Peter's
+    	var peter = L.marker([-1.105302, 37.011198], {icon: pryIcon}).addTo(map);
+    	// Sukari
+    	var sukari = L.marker([-1.189206, 36.942313], {icon: pryIcon}).addTo(map);
+
+    	// secondary schools
+    	// Maryhill
+    	var maryhill = L.marker([-1.009403, 36.992413], {icon: secIcon}).addTo(map);
+    	// Alliance
+    	var alliance = L.marker([-1.260261, 36.665236], {icon: secIcon}).addTo(map);
+    	// Mangu
+    	var mangu = L.marker([-1.070624, 37.047215], {icon: secIcon}).addTo(map);
+    	// Loreto
+    	var loreto = L.marker([-1.121154, 36.657001], {icon: secIcon}).addTo(map);
+    	// Dagoretti
+    	var dagoretti = L.marker([-1.275245, 36.712735], {icon: secIcon}).addTo(map);
+
+    	// tertiary schools
+    	// jkuat
+    	var jkuat = L.marker([-1.091143, 37.011149], {icon: uniIcon}).addTo(map);
+    	// usiu
+    	var usiu = L.marker([-1.217642, 36.878911], {icon: uniIcon}).addTo(map);
+    	// ku
+    	var ku = L.marker([-1.180900, 36.936154], {icon: uniIcon}).addTo(map);
+    	// kist
+    	var kist = L.marker([-1.183083, 36.836543], {icon: uniIcon}).addTo(map);
+    	// mku
+    	var mku = L.marker([-1.044902, 37.082366], {icon: uniIcon}).addTo(map);
+
+    	// public hospitals
+    	// kiambu l5
+    	var kiambu_l5 = L.marker([-1.172139, 36.830554], {icon: pubIcon}).addTo(map);
+    	// jkuat
+    	var jkuat_hosp = L.marker([-1.096631, 37.012704], {icon: pubIcon}).addTo(map);
+    	// gatundu l5
+    	var gatundu_l5 = L.marker([-1.013884, 36.905876], {icon: pubIcon}).addTo(map);
+    	// tigoni l4
+    	var tigoni_l4 = L.marker([-1.127904, 36.668461], {icon: pubIcon}).addTo(map);
+
+    	// private hospitals
+    	// gertrude's
+    	var gertrude = L.marker([-1.255759, 36.831458], {icon: privIcon}).addTo(map);
+    	// kijabe
+    	var kijabe = L.marker([-0.946549, 36.594633], {icon: privIcon}).addTo(map);
+    	// neema
+    	var neema = L.marker([-1.219775, 36.885964], {icon: privIcon}).addTo(map);
+    	// avenue
+    	var avenue = L.marker([-1.038374, 37.077688], {icon: privIcon}).addTo(map);
+    	// betacare
+    	var betacare = L.marker([-1.063370, 36.782853], {icon: privIcon}).addTo(map);
+
+    	// police posts
+    	// kiambu
+    	var kiambu_pp = L.marker([-1.173120, 36.831949], {icon: adminIcon}).addTo(map);
+    	// ruiru
+    	var ruiru_pp = L.marker([-1.144462, 36.959523], {icon: adminIcon}).addTo(map);
+    	// thika
+    	var thika_pp = L.marker([-1.038583, 37.083506], {icon: adminIcon}).addTo(map);
+    	// gatundu
+    	var gatundu_pp = L.marker([-1.011079, 36.901991], {icon: adminIcon}).addTo(map);
+    	// juja
+    	var juja_pp = L.marker([-1.104375, 37.017626], {icon: adminIcon}).addTo(map);
+
+    	// hotels
+    	// windsor
+    	var windsor = L.marker([-1.210056, 36.851291], {icon: hotelIcon}).addTo(map);
+    	// tribe
+    	var tribe = L.marker([-1.226765, 36.805374], {icon: hotelIcon}).addTo(map);
+    	// maxland
+    	var maxland = L.marker([-1.117524, 37.007801], {icon: hotelIcon}).addTo(map);
+    	// sigona
+    	var sigona = L.marker([-1.223279, 36.660617], {icon: hotelIcon}).addTo(map);
+    	// elysian
+    	var elysian = L.marker([-1.212723, 36.827898], {icon: hotelIcon}).addTo(map);
+
+    	// malls
+    	// juja city
+    	var juja_mall = L.marker([-1.117793, 37.009542], {icon: mallIcon}).addTo(map);
+    	// garden city
+    	var garden_city = L.marker([-1.231698, 36.879528], {icon: mallIcon}).addTo(map);
+    	// trm
+    	var trm = L.marker([-1.220156, 36.889278], {icon: mallIcon}).addTo(map);
+    	// two rivers
+    	var two_rivers = L.marker([-1.211646, 36.795137], {icon: mallIcon}).addTo(map);
+
+    	// adding layers on the map
+    	var pry_schools = L.layerGroup([ahadi, lily, kiambu, peter, sukari]);
+    	var sec_schools = L.layerGroup([maryhill, alliance, mangu, loreto, dagoretti]);
+    	var uni_schools = L.layerGroup([jkuat, usiu, ku, kist, mku]);
+    	var pub_hospitals = L.layerGroup ([kiambu_l5, jkuat_hosp, gatundu_l5, tigoni_l4]);
+    	var priv_hospitals = L.layerGroup([gertrude, kijabe, neema, avenue, betacare]);
+    	var police_posts = L.layerGroup([kiambu_pp, ruiru_pp, thika_pp, gatundu_pp, juja_pp]);
+    	var hotels = L.layerGroup([windsor, tribe, maxland, sigona, elysian]);
+    	var malls = L.layerGroup([juja_mall, garden_city, trm, two_rivers]);
+    	var all = L.layerGroup([pry_schools, sec_schools, uni_schools, pub_hospitals, priv_hospitals, police_posts, hotels, malls]);
+
+    	var overlayMaps = {
+    		"All categories": all,
+    		"Primary schools": pry_schools,
+    		"Secondary schools": sec_schools,
+    		"Universities": uni_schools,
+    		"Public hopsitals": pub_hospitals,
+    		"Private hopsitals": priv_hospitals,
+    		"Police posts": police_posts,
+    		"Hotels": hotels,
+    		"Malls": malls
+    	};
+    	var layerControl = L.control.layers(overlayMaps).addTo(map);
+  	</script>
+	<footer class="footer">
+		<small>&copy; SparkGIS2023</small>
+	</footer>
+</body>
+</html>
