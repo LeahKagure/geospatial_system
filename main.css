@@ -1,0 +1,320 @@
+/* http://meyerweb.com/eric/tools/css/reset/ 
+   v2.0 | 20110126
+   License: none (public domain)
+*/
+
+html, body, div, span, applet, object, iframe,
+h1, h2, h3, h4, h5, h6, p, blockquote, pre,
+a, abbr, acronym, address, big, cite, code,
+del, dfn, em, img, ins, kbd, q, s, samp,
+small, strike, strong, sub, sup, tt, var,
+b, u, i, center,
+dl, dt, dd, ol, ul, li,
+fieldset, form, label, legend,
+table, caption, tbody, tfoot, thead, tr, th, td,
+article, aside, canvas, details, embed, 
+figure, figcaption, footer, header, hgroup, 
+menu, nav, output, ruby, section, summary,
+time, mark, audio, video {
+	margin: 0;
+	padding: 0;
+	border: 0;
+	font-size: 100%;
+	font: inherit;
+	vertical-align: baseline;
+}
+/* HTML5 display-role reset for older browsers */
+article, aside, details, figcaption, figure, 
+footer, header, hgroup, menu, nav, section {
+	display: block;
+}
+body {
+	line-height: 1;
+}
+ol, ul {
+	list-style: none;
+}
+blockquote, q {
+	quotes: none;
+}
+blockquote:before, blockquote:after,
+q:before, q:after {
+	content: '';
+	content: none;
+}
+table {
+	border-collapse: collapse;
+	border-spacing: 0;
+}
+/*
+  ========================================
+  Grid
+  ========================================
+*/
+
+*,
+*:before,
+*:after {
+  -webkit-box-sizing: border-box;
+     -moz-box-sizing: border-box;
+          box-sizing: border-box;
+}
+/*
+  ========================================
+  Clearfix
+  ========================================
+*/
+.group:before,
+.group:after {
+  content: "";
+  display: table;
+}
+.group:after {
+  clear: both;
+}
+.group {
+  clear: both;
+  *zoom: 1;
+}
+
+/*
+=========================================
+ALL PAGES
+=========================================
+*/
+.header {
+	height: 70px;
+	font-family: fraunces;
+	font-size: 46px;
+	font-weight: 600;
+	text-align: center;
+	padding: 15px 0 30px 0;
+	letter-spacing: 3px;
+}
+.footer {
+	height: 30px;
+	float: left;
+	font-family: fraunces;
+	padding: 20px 0 15px 0;
+	position: absolute;
+}
+.navigation-bar {
+	text-transform: capitalize;
+	font-family: fraunces;
+	font-size: 18px;
+	word-spacing: 2.5em;
+	text-align: right;
+	letter-spacing: 1.5px;
+	border: 5px solid #D9D9D9;
+	padding: 15px 20px 15px 50px;
+	background-color: #D9D9D9;
+	opacity: 70%;
+	max-width: 60%;
+	margin-left: 450px;
+	margin-right: 10px;
+}
+.navigation-bar a {
+	text-decoration: none;
+	color: #000;
+	width: 15%;
+	font-weight: 600;
+}
+/*
+===================================
+WELCOME PAGE
+===================================
+*/
+.welcome-page {
+	background-image: url('Images/welcomebackground.jpeg');
+	background-repeat: no-repeat;
+	background-size: cover;
+	background-attachment: fixed;
+	display: block;
+	height: 520px;
+	font-family: fraunces;
+}
+.welcome-message {
+	color: #fff;
+	font-weight: 600;
+	font-size: 52px;
+	padding: 100px 0 30px 150px;
+	line-height: 1.5;
+	text-align: left;
+}
+/*
+==================================
+ABOUT PAGE
+==================================
+*/
+.about-page {
+	background-image: url('Images/beachside.jpg');
+	background-repeat: no-repeat;
+	background-size: cover;
+	background-attachment: fixed;
+	height: 520px;
+	font-family: fraunces;
+	opacity: 80%;
+}
+.about-page h2 {
+	font-size: 65px;
+	font-weight: 600;
+	line-height: 1.5;
+	text-align: center;
+}
+.about-page p {
+	line-height: 1.5;
+	text-align: center;
+	font-weight: 600 !important;
+	font-size: 24px !important;
+}
+/*
+==================================
+PROJECTS PAGE
+==================================
+*/
+.projects-top {
+	background-image: url('Images/Monoculture-Growing.jpg');
+	background-repeat: no-repeat;
+	background-size: cover;
+	background-attachment: fixed;
+	height: 140px;
+	font-family: fraunces;
+}
+h3 {
+	font-family: fraunces;
+	font-weight: 600;
+	font-size: 30px;
+}
+p {
+	font-family: fraunces;
+	font-weight: 400;
+	font-size: 20px;
+}
+.projects-first {
+	font-family: fraunces;
+	display: flex;
+	grid-template-columns: 1fr 1fr 1fr;
+	column-gap: 5px;
+}
+.first-paragraph {
+	position: absolute;
+	right: 0%;
+	max-width: 800px;
+	text-align: center;
+	padding-top: 40px;
+	padding-right: 60px;
+	line-height: 2;
+}
+.projects-second {
+	font-family: fraunces;
+	display: flex;
+	grid-template-columns: 1fr 1fr 1fr;
+	column-gap: 5px;
+}
+.second-paragraph {
+	position: relative;
+	left: 0%;
+	max-width: 800px;
+	text-align: center;
+	padding-top: 40px;
+	padding-left: 40px;
+	line-height: 2;
+}
+.projects-third {
+	font-family: fraunces;
+	display: flex;
+	grid-template-columns: 1fr 1fr 1fr;
+	column-gap: 5px;
+}
+.third-paragraph {
+	position: absolute;
+	right: 0%;
+	max-width: 800px;
+	text-align: center;
+	padding-top: 40px;
+	padding-right: 60px;
+	line-height: 2;
+}
+.projects-fourth {
+	font-family: fraunces;
+	display: flex;
+	grid-template-columns: 1fr 1fr 1fr;
+	column-gap: 5px;
+}
+.fourth-paragraph {
+	position: relative;
+	left: 0%;
+	max-width: 800px;
+	text-align: center;
+	padding-top: 40px;
+	padding-left: 60px;
+	line-height: 2;
+}
+/*
+==================================
+TESTIMONIALS PAGE
+==================================
+*/
+h3 {
+	font-family: fraunces;
+	font-weight: 600;
+	font-size: 30px;
+}
+p {
+	font-family: fraunces;
+	font-weight: 400;
+	font-size: 18px;
+}
+.test-one {
+	font-family: fraunces;
+	display: flex;
+	grid-template-columns: 1fr 1fr 1fr;
+	column-gap: 5px;
+}
+.first-test {
+	position: absolute;
+	right: 0%;
+	max-width: 800px;
+	text-align: center;
+	padding-top: 30px;
+	padding-right: 60px;
+	line-height: 2;
+}
+.test-two {
+	font-family: fraunces;
+	display: flex;
+	grid-template-columns: 1fr 1fr 1fr;
+	column-gap: 5px;
+}
+.second-test {
+	position: relative;
+	left: 0%;
+	max-width: 800px;
+	text-align: center;
+	padding-top: 30px;
+	padding-left: 40px;
+	line-height: 2;
+}
+.test-three {
+	font-family: fraunces;
+	display: flex;
+	grid-template-columns: 1fr 1fr 1fr;
+	column-gap: 5px;
+}
+.third-test {
+	position: absolute;
+	right: 0%;
+	max-width: 800px;
+	text-align: center;
+	padding-top: 30px;
+	padding-right: 60px;
+	line-height: 2;
+}
+/*
+=============================
+GEOPORTAL PAGE
+=============================
+*/
+#map {
+	height: 450px;
+}
